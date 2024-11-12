@@ -1,8 +1,9 @@
 // backend/routes/apiRoutes.js
-const express = require('express');
+import express from 'express';
+import authMiddleware from '../middlewares/authMiddleware.js';
+import login from '../controllers/auth.js';
+
 const router = express.Router();
-const authMiddleware = require('../middlewares/authMiddleware');
-const login = require('../controllers/auth');
 
 /**
  * @swagger
@@ -64,4 +65,4 @@ router.post('/example', authMiddleware, (req, res) => {
 });
 
 // Export the router
-module.exports = router;
+export default router;

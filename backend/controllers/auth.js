@@ -1,7 +1,7 @@
 // backend/controllers/auth.js
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
-const { findUserByUsername } = require('../models/User');
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcrypt';
+import {createAdminUser} from '../models/User.js';
 
 const login = async (req, res) => {
   const { username, password } = req.body;
@@ -36,4 +36,4 @@ const login = async (req, res) => {
   }
 };
 
-module.exports = login;
+export default login;

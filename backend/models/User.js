@@ -1,5 +1,6 @@
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+
 
 const users = []; // This should ideally be replaced with a database
 
@@ -34,7 +35,7 @@ const createAdminUser = async () => {
   }
 };
 
-module.exports = {
+export {
   addUser,
   findUserByUsername,
   createAdminUser,
